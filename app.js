@@ -38,7 +38,7 @@ function runSequencer(){
     for(var i=0;i<blocks.length;i++){
       var block = blocks[i];
       if(!block.control && col==block.gridX && block.isEnabled()){
-        // if(!isFirefoxOS)block.trigger();
+        if(!isFirefoxOS)block.trigger();
         var height = block.gridHeight();
         var heightOctave = Math.floor(height / scale.size());
         var noteNum = scale.wrapAt(height) + 48 + (12*heightOctave);
@@ -106,11 +106,11 @@ var Block = function(gridX,gridY){
       if(me.clickFunc){
         me.clickFunc();
         setRowEnabled(me.gridY, false);
-        p.draw();
+        if(isFirefoxOS)p.draw();
       }
     } else {
       me.setEnabled(!me.isEnabled());
-      me.draw();
+      if(isFirefoxOS)me.draw();
     }
   }
 
@@ -313,7 +313,7 @@ function processingSketch(p){
     blocks.forEach(function(b){
       b.draw();
     });    
-    p.noLoop();
+    if(isFirefoxOS)p.noLoop();
   }
 
   p.mouseClicked = function(){
