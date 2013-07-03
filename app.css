@@ -1,0 +1,11 @@
+html, body {
+	margin:0px;
+	background-color: black;
+	color: white;
+	font-size: 11px;
+}
+
+canvas{
+	margin: auto;
+	display: block;
+}

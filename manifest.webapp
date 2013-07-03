@@ -1,0 +1,9 @@
+{
+		"name":"SynthSeq",
+		"description":"Synthesizer Sequencer",
+		"launch_path":"/index.html",
+		"icons":{"128":"/icon.png"},
+		"developer":{"name":"Jeremy Wentworth", "url":"http://jeremywentworth.com"},
+		"default_locale":"en"
+}
+		
